@@ -1,0 +1,1 @@
+﻿# Local dev files to ignore\nvenv/\nsandia/venv/\n.env\nnode_modules/\n__pycache__/\n
