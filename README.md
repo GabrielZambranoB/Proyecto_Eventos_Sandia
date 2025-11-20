@@ -30,6 +30,8 @@ Si te dice que no existe, créalo:
 python -m venv venv
 .\venv\Scripts\activate
 
+Alternativamente, desde la raíz del proyecto puedes ejecutar `.\setup.ps1` para crear el entorno virtual, instalar dependencias y ejecutar las migraciones automáticamente.
+
 1.3. Instala las dependencias (las librerías necesarias)
 pip install -r requirements.txt
 
