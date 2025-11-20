@@ -21,19 +21,44 @@ Abre una terminal y muevete a la carpeta sandia:
 
 cd sandia
 
-1.2. Activa el entorno virtual (o créalo si no existe)
+1.2. Entorno virtual (recomendado: automático o manual)
 
-.\venv\Scripts\activate
+Opción recomendada (automática): desde la raíz del proyecto ejecuta el script `\setup.ps1` (Windows PowerShell). Esto crea el `venv` en `sandia\venv`, instala dependencias y aplica migraciones.
 
-Si te dice que no existe, créalo:
+Ejemplo (PowerShell, desde la raíz del repo):
 
+```
+.\setup.ps1
+# o para crear también el superuser interactivo:
+.\setup.ps1 -CreateSuperuser
+```
+
+Opción manual (PowerShell):
+
+1) Entra a la carpeta del backend:
+
+```
+cd sandia
+```
+
+2) Si no existe el `venv`, créalo y actívalo:
+
+```
 python -m venv venv
-.\venv\Scripts\activate
+.\venv\Scripts\Activate.ps1
+```
 
-Alternativamente, desde la raíz del proyecto puedes ejecutar `.\setup.ps1` para crear el entorno virtual, instalar dependencias y ejecutar las migraciones automáticamente.
+Si PowerShell bloquea la ejecución de scripts, ejecuta (una sola vez):
+
+```
+Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned -Force
+```
 
 1.3. Instala las dependencias (las librerías necesarias)
+
+```
 pip install -r requirements.txt
+```
 
 1.4. Entra al módulo principal del backend
 cd eventos
